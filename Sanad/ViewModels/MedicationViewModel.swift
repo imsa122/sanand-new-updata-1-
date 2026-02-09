@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import AVFoundation
 
 /// نموذج عرض الأدوية - Medication View Model
 class MedicationViewModel: ObservableObject {
@@ -103,9 +104,10 @@ class MedicationViewModel: ObservableObject {
         print("✅ تم تسجيل تناول: \(medication.name)")
         
         // نطق تأكيد
-        reminderManager.synthesizer.speak(
-            AVSpeechUtterance(string: "تم تسجيل تناول \(medication.name)")
-        )
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: "تم تسجيل تناول \(medication.name)")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ar-SA")
+        synthesizer.speak(utterance)
     }
     
     // MARK: - Voice Reminder

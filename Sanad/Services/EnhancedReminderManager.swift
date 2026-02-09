@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 import AVFoundation
+import Combine
 
 /// مدير التذكيرات المحسّن - Enhanced Reminder Manager
 class EnhancedReminderManager: ObservableObject {

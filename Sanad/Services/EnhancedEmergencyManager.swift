@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 import UIKit
+import Combine
 import UserNotifications
 
 /// مدير الطوارئ المحسّن - Enhanced Emergency Manager
